@@ -49,13 +49,13 @@ Drone bay được thật: tự giữ thăng bằng, bay theo lộ trình đặt
 | Nền | Việc cụ thể |
 |-----|-------------|
 | **Firmware STM32** | Driver cảm biến, vòng điều khiển ổn định, tích hợp ArduPilot/PX4, xử lý failsafe |
-| **Hardware** | Mạch nguồn, mạch điều khiển, chống nhiễu từ ESC, tích hợp cơ khí chịu rung |
+| **Hardware** | Mạch nguồn, mạch điều khiển, chống nhiễu từ ESC, tích hợp cơ khí chịu rung, khung và thiết kế cơ khí của drone |
 | **Thị giác máy** | Bám mục tiêu, hạ cánh chính xác, bay theo thị giác khi tín hiệu vệ tinh yếu |
 | **ESP32 & Kết nối** | Truyền dữ liệu từ drone về trạm mặt đất |
 
 ### Đặc thù phải biết trước
 
-Đây là mảng **nguy hiểm nhất và bị pháp luật quản lý chặt nhất** trong ba mảng.
+Đây là điều **nguy hiểm nhất và bị pháp luật quản lý chặt nhất**.
 
 - Cánh quạt quay ở tốc độ đủ để gây thương tích nặng
 - Pin LiPo cháy thì không dập được bằng nước
@@ -63,7 +63,7 @@ Drone bay được thật: tự giữ thăng bằng, bay theo lộ trình đặt
 
 **Bắt buộc đọc trước khi tham gia:** [An toàn & pháp lý](an-toan-va-phap-ly.md).
 
-Điểm quan trọng nhất trong đó: drone CLB tự lắp ráp **không thuộc diện được miễn cấp phép bay**, và thuộc diện cần giấy chứng nhận tình trạng kỹ thuật. Việc này do người phụ trách CLB làm với nhà trường — **không phải việc sinh viên tự xử lý, và không ai được tự ý mang drone đi bay**.
+Điểm quan trọng nhất trong đó: drone CLB tự lắp ráp **không thuộc diện được miễn cấp phép bay**, và thuộc diện cần giấy chứng nhận tình trạng kỹ thuật. Việc này do chủ nhiệm CLB và người phụ trách drone đó làm với nhà trường — **không phải việc các thành viên mới tự xử lý, và không ai được tự ý mang drone đi bay nếu không được cả 2 người trên đồng ý**.
 
 ---
 
@@ -71,7 +71,7 @@ Drone bay được thật: tự giữ thăng bằng, bay theo lộ trình đặt
 
 ### Sản phẩm
 
-Thiết bị đo một thứ gì đó ngoài đời thật rồi đưa số liệu về nơi cần dùng: đo môi trường, giám sát thiết bị, điều khiển từ xa.
+Thiết bị đo một thứ gì đó ngoài đời thật rồi đưa số liệu về nơi cần dùng: đo môi trường, giám sát thiết bị, điều khiển từ xa, ...
 
 ### Các phần ghép lại thế nào
 
@@ -97,7 +97,7 @@ Thiết bị đo một thứ gì đó ngoài đời thật rồi đưa số li�
 
 ### Vì sao nên bắt đầu ở đây nếu bạn chưa biết chọn gì
 
-Mảng này **cho kết quả nhìn thấy được sớm nhất**. Trong vài tuần bạn đã có một thiết bị chạy thật, xem được số liệu trên điện thoại.
+Mảng này dễ nhất và cho kết quả nhanh nhất. Trong vài tuần bạn đã có một thiết bị chạy thật.
 
 Nó cũng an toàn hơn UAV nhiều — không có gì bay, không có cánh quạt. Và kỹ năng học được ở đây chuyển sang hai mảng kia rất dễ.
 
