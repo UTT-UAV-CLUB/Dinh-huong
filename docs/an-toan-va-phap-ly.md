@@ -14,19 +14,21 @@
 - Khi bay, không ai đứng trong bán kính cánh quạt có thể văng tới.
 - Kiểm tra cánh nứt trước mỗi lần bay. Cánh nứt văng ra ở tốc độ cao là mảnh đạn.
 
-### Pin LiPo — thứ nguy hiểm nhất trong phòng lab
+### Pin LiPo
 
 - **Không sạc pin khi không có người trông.** Không sạc qua đêm.
-- Sạc trong túi chống cháy hoặc thùng kim loại, đặt xa vật dễ cháy.
+- Nếu xác định không dùng đến pin trong ngày, hãy để pin vào chế độ lưu trữ ở 3.7V (Sẽ được hướng dẫn sử dụng bộ sạc pin khi các bạn được dùng)
+- Khi sạc để cách pin khỏi các bề mặt kim loại, dẫn điện, đặt xa vật dễ cháy.
 - Pin **phồng, móp, thủng, hoặc vừa rơi mạnh** → ngừng dùng ngay, báo người phụ trách. Không tự ý vứt vào thùng rác.
-- Không để pin trong xe dưới nắng, không để cạnh nguồn nhiệt.
-- Pin cháy sinh khí độc. Nếu cháy: sơ tán người trước, báo ngay, **không dùng nước**.
+- Không để pin trong xe dưới nắng, không để cạnh nguồn nhiệt, không được để pin cạnh những vật sắc nhọn làm từ kim loại (dao, kéo, đầu mũi nhíp, ...).
+- Pin cháy sinh khí độc. Nếu cháy: sơ tán người trước, báo ngay, **không dùng nước, nếu có thể hãy dùng cát để phủ kín pin khỏi nguồn oxi**.
 
 ### Điện và hàn
 
 - Mỏ hàn nóng trông y hệt mỏ hàn nguội. Luôn đặt vào giá đỡ, không đặt lên bàn.
 - Hàn ở nơi thông gió. Khói chì/nhựa thông không tốt cho phổi.
-- Kính bảo hộ khi cắt chân linh kiện — mẩu kim loại bay vào mắt là chấn thương vĩnh viễn.
+- Sau khi hàn xong, luôn kiểm tra xem mối hàn có chập không bằng chế độ thông mạch của đồng hồ vạn năng
+- Kính bảo hộ khi cắt chân linh kiện (Nếu không có kính bảo hộ, tránh xa khỏi điểm cắt một dải tay và nhắm mắt lại, cắt trong môi trường kín đế tránh vụn được nếu được) — mẩu kim loại bay vào mắt là chấn thương vĩnh viễn.
 - Đo mạch có nguồn: kiểm tra que đo và thang đo trước khi chạm. Đo dòng bằng thang đo áp sẽ làm nổ cầu chì đồng hồ, hoặc tệ hơn.
 
 ### Quy tắc bay thử
@@ -35,7 +37,7 @@
 - Xác định trước ai là người hô dừng, và khi người đó hô thì dừng ngay, không tranh luận.
 - Biết trước nút/thao tác ngắt động cơ khẩn cấp trước khi cất cánh.
 - Bay thử lần đầu luôn ở chế độ giới hạn: thấp, chậm, gần.
-- Không bay trên đầu người. Không bay trên đám đông. Không bao giờ.
+- TUYỆT ĐỐI KHÔNG bay trên đầu người. Không bay trên đám đông nếu không được phép.
 
 ---
 
@@ -76,11 +78,9 @@ Các thông tin sau tôi thấy xuất hiện trên các trang tin và trang d�
 ## Phần 3 — Quy trình của CLB
 
 1. **Không thành viên nào tự ý mang drone của CLB đi bay ngoài khuôn viên được duyệt.**
-2. Mọi buổi bay thử phải được người phụ trách CLB biết trước và đồng ý.
+2. Mọi buổi bay thử phải được báo trước cho chủ nhiệm CLB hoặc người đang phụ trách drone đó.
 3. Người phụ trách chịu trách nhiệm về thủ tục xin phép với nhà trường và cơ quan chức năng.
-4. Có sự cố — dù không ai bị thương — vẫn phải báo và ghi lại. Sự cố không được ghi lại là sự cố sẽ lặp lại.
-
-**Người phụ trách an toàn bay của CLB:** `<cần điền tên và số điện thoại>`
+4. Có sự cố — dù không ai bị thương — vẫn phải báo lại. Sự cố không được báo lại là sự cố sẽ lặp lại.
 
 ---
 
