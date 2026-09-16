@@ -8,7 +8,7 @@ File này dành cho bạn vừa vào CLB và đang định hỏi một câu ki�
 
 Không có gì sai khi muốn những thứ đó. Vấn đề nằm ở chỗ khác: **những thứ đó không phải điểm bắt đầu, chúng là điểm đến**. Và khoảng cách từ chỗ bạn đang đứng tới đó thường xa hơn bạn nghĩ — không phải vì nó khó một cách bí ẩn, mà vì nó được xếp chồng lên khoảng năm sáu lớp nền mà bạn chưa có.
 
-CLB chỉ có một hai người đủ sức kèm. Nếu mỗi người mới đều cần được giải thích lại từ đầu, không ai còn thời gian làm việc thật. File này viết ra để bạn tự đi được đoạn đường đầu tiên.
+CLB chỉ có một vài người đủ sức kèm cặp các bạn. Nếu mỗi người mới đều cần được giải thích lại từ đầu, không ai còn thời gian làm việc thật. CLB chúng ta hướng đến tinh thần tự học và chia sẻ kinh nghiệm với nhau, chứ không phải là một khóa học dạy các bạn từ đầu đến cuối. File này viết ra để bạn tự đi được đoạn đường đầu tiên.
 
 ---
 
@@ -110,7 +110,7 @@ Chưa cần: lập trình hướng đối tượng, template C++, thuật toán 
 
 **Tự chấm:** viết chương trình C nhận một mảng byte, tách ra các trường dữ liệu bên trong bằng phép dịch bit và mặt nạ bit, in kết quả ra. Đây chính xác là việc bạn sẽ làm hằng ngày khi đọc thanh ghi phần cứng.
 
-### 2. Dòng lệnh Linux
+### 2. Terminal Linux
 
 **Tại sao:** board nhúng không có giao diện. Công cụ build không có nút bấm. Bạn sẽ sống trên dòng lệnh.
 
@@ -144,13 +144,13 @@ Cần làm được: đọc ghi file · vòng lặp và hàm · cài thư viện
 
 Đây là nguyên tắc số một của CLB.
 
-Khi bạn nói *"con chip này chạy ở 3.3V"* hay *"cảm biến này lấy mẫu 1000 lần mỗi giây"* — con số đó phải đến từ **datasheet**. Không phải từ trí nhớ. Không phải suy ra từ tên linh kiện. Không phải từ một video trên mạng.
+Khi bạn nói *"con chip này chạy ở 3.3V"* hay *"cảm biến này lấy mẫu 1000 lần mỗi giây"* — con số đó phải đến từ **datasheet - tài liệu chính thức từ nhà sản xuất**. Không phải từ trí nhớ. Không phải suy ra từ tên linh kiện. Không phải từ một video trên mạng.
 
-Lý do rất thực tế: **một con số bịa trông y hệt một con số đúng.** Người review không có cách nào phát hiện, và nó sẽ đi thẳng vào thiết kế. Đến khi board cháy hoặc drone rơi thì mới biết, và lúc đó tìm lại nguyên nhân rất tốn kém.
+Lý do: **một con số bịa trông y hệt một con số đúng.** Không phải ai làm cũng nhớ hết được thông số trong datasheet, và nó sẽ đi thẳng vào thiết kế. Đến khi board cháy hoặc drone rơi thì mới biết, và lúc đó tìm lại nguyên nhân rất tốn kém.
 
-Không tra được thì viết thẳng **"chưa kiểm chứng"**. Không ai đánh giá thấp bạn vì câu đó. Người ta đánh giá thấp bạn vì một con số sai làm hỏng phần cứng.
+Không tra được thì viết thẳng **"chưa kiểm chứng"**. Không ai đánh giá thấp bạn vì câu đó.
 
-Quy tắc phụ, cũng quan trọng: **không suy thông số từ tên gọi**. Tên linh kiện, tên chân, tên hàm chỉ gợi ý chỗ cần tra — chúng không phải bằng chứng.
+**Luôn tra cách làm, tài liệu, datasheet, ... nếu không chắc chắn**
 
 ### Hỏi đúng cách
 
