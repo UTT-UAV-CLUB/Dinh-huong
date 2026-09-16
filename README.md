@@ -11,9 +11,18 @@ CLB làm ba mảng sản phẩm: **UAV**, **IoT** và **AIoT**. Tài liệu này
 
 **→ [Bạn đang ở đâu](docs/00-ban-dang-o-dau.md)**
 
-Đây là file quan trọng nhất trong repo. Nó trả lời câu hỏi mà hầu hết người mới đang hỏi sai cách: *"em muốn làm drone tự bay / làm AI nhận diện / làm nhà thông minh, em bắt đầu từ đâu?"*
+Đây là file quan trọng nhất trong repo. Nó giúp biến những mục tiêu còn rất rộng như *"làm drone tự bay"*, *"làm AI nhận diện"* hay *"làm nhà thông minh"* thành một việc đầu tiên vừa sức.
 
-Đọc xong file đó rồi hẵng hỏi. Không phải vì không được hỏi, mà vì sau khi đọc bạn sẽ hỏi được câu hỏi tốt hơn nhiều.
+Bạn không cần hiểu hết mọi thuật ngữ rồi mới được hỏi. Hãy đọc file đó, đánh dấu chỗ mình đang đứng và mang cả những chỗ chưa hiểu ra hỏi — như vậy mentor sẽ giúp bạn nhanh hơn.
+
+### Bắt đầu trong hôm nay
+
+1. Đọc [Bạn đang ở đâu](docs/00-ban-dang-o-dau.md) và làm phần tự kiểm tra.
+2. Chọn **một nền để thử trước**, chưa phải cam kết theo lâu dài.
+3. Mở file của nền đó và làm mục **Bài đầu tiên — 1 đến 2 buổi**. Bài tự chấm ở cuối là đích của cả chặng, không phải việc phải làm ngay.
+4. Nếu tắc, ghi lại mục tiêu, điều đã thử và lỗi thực tế rồi hỏi trong nhóm CLB.
+
+Chưa có board cũng không sao. Hãy hỏi CLB đang có thiết bị gì trước khi mua; nhiều phần nền chung có thể học ngay trên máy tính.
 
 ---
 
@@ -35,7 +44,7 @@ Chúng cắt nhau, không thay thế nhau. Cùng một nghề firmware, đem san
 | **Hardware** | Thiết kế mạch, vẽ PCB, hàn, đo. Làm ra cái board vật lý. | [nen-hardware.md](docs/nen-hardware.md) |
 | **Thị giác máy nhúng** | Cho máy "nhìn". Chạy model thị giác trên board nhúng, đủ nhanh để dùng thật. | [nen-thi-giac-may.md](docs/nen-thi-giac-may.md) |
 
-Chọn **một** nền. Không ai giỏi cả bốn, và không ai cần bạn giỏi cả bốn.
+Chọn **một nền để bắt đầu**. Sau khi thử thật, bạn có thể đổi. Mục tiêu ban đầu là đi đủ sâu để làm được một việc hoàn chỉnh, không phải học dàn trải cả bốn nền.
 
 ### Ba mảng
 
@@ -54,30 +63,29 @@ Chi tiết từng mảng: **[Ba mảng sản phẩm](docs/ba-mang-san-pham.md)**
 | Tài liệu | Khi nào đọc |
 |----------|-------------|
 | [An toàn & pháp lý](docs/an-toan-va-phap-ly.md) | **Bắt buộc**, trước khi chạm vào bất cứ thứ gì bay được hoặc có pin LiPo |
-| [Cách đóng góp](CONTRIBUTING.md) | Trước khi gửi code đầu tiên |
 | [Phụ lục: sơ đồ kỹ năng](docs/phu-luc-so-do-ky-nang.md) | Khi muốn nhìn toàn cảnh ngành nhúng |
 
 ---
 
 ## Ba nguyên tắc của CLB
 
-**1. Không ai biết trước khi vào.** Không có câu hỏi nào là ngu. Nhưng có câu hỏi hỏi sai thời điểm — hỏi cách làm drone tự bay khi chưa viết nổi vòng lặp C thì không ai trả lời giúp bạn được.
+**1. Bắt đầu từ đúng chỗ.** Không có câu hỏi nào là ngu. Một mục tiêu lớn sẽ dễ trả lời hơn khi tách thành bước gần nhất với nền hiện tại của bạn.
 
 **2. Làm được mới tính.** Đọc hết tài liệu mà chưa ra sản phẩm thì coi như chưa bắt đầu. Mỗi nền trong repo này đều có phần tự kiểm tra bằng việc làm, không phải bằng lý thuyết.
 
-**3. Tự đi được rồi hãy nhờ dẫn.** CLB có rất ít người đủ sức kèm. Thời gian của họ phải dành cho những chỗ bạn thật sự tắc, không phải cho những thứ đã viết sẵn ở đây.
+**3. Tự thử trước, rồi hỏi sớm và hỏi rõ.** Tài liệu giúp bạn đi bước đầu; mentor giúp ở những chỗ bạn đã thử nhưng vẫn tắc. Đừng im lặng quá lâu chỉ vì sợ câu hỏi của mình còn cơ bản.
 
 ---
 
 ## Học tới đâu thì xin được việc?
 
-Đừng hỏi ai. Tự xem thị trường trả lời:
+Để biết kỹ năng nào đang được tuyển dụng, hãy xem mô tả công việc thực tế:
 
-**[Nhóm Tuyển Dụng Lập Trình Nhúng (Embedded), Automotive, C, C++, IOT, QT, QML](https://web.facebook.com/groups/775890384111054)** — nhóm công khai, khoảng 57,6 nghìn thành viên, nhà tuyển dụng đăng tin liên tục.
+**[Nhóm Tuyển Dụng Lập Trình Nhúng (Embedded), Automotive, C, C++, IOT, QT, QML](https://web.facebook.com/groups/775890384111054)** là một nơi tham khảo. Nên đối chiếu thêm tin tuyển dụng ở các nguồn khác thay vì dựa vào một bài đăng hoặc một nhóm duy nhất.
 
-Cách dùng nhóm này cho đúng: đọc **mô tả công việc**, không đọc mức lương. Lấy vài tin tuyển dụng ở mảng bạn theo, liệt kê các kỹ năng họ yêu cầu, rồi đối chiếu với nền bạn đang học. Chỗ nào bạn chưa có — đó là việc tiếp theo của bạn.
+Cách làm: lấy 5–10 mô tả công việc gần đây ở mảng bạn quan tâm, ghi lại các kỹ năng lặp lại nhiều lần, rồi đối chiếu với nền đang học. Mức lương, chức danh và yêu cầu số năm kinh nghiệm thay đổi theo công ty nên không dùng một tin đơn lẻ làm kết luận.
 
-Đây là cách tự định hướng đáng tin nhất, vì nó đến từ nơi thật sự trả tiền, không đến từ cảm nhận của bất kỳ ai trong CLB.
+Đây là một cách kiểm tra hướng học bằng nhu cầu thực tế, bên cạnh góp ý của mentor và trải nghiệm khi bạn tự làm dự án.
 
 ---
 

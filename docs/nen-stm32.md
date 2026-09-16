@@ -8,7 +8,7 @@
 
 Bạn viết phần mềm điều khiển phần cứng ở mức thấp nhất — đọc cảm biến, điều khiển động cơ, xử lý đúng thời điểm tính bằng micro giây. Khi con drone giữ được thăng bằng, đó là code của bạn đang chạy hàng trăm lần mỗi giây.
 
-Đây là nghề **được trả lương cao và tuyển nhiều nhất** trong ba nền của CLB, vì ít người chịu được nó.
+Kỹ năng firmware xuất hiện trong nhiều vị trí embedded, từ thiết bị công nghiệp, ô tô đến IoT và UAV. Đổi lại, thời gian đầu thường ít có kết quả trực quan và đòi hỏi kiên nhẫn khi debug.
 
 ---
 
@@ -18,7 +18,7 @@ Bạn viết phần mềm điều khiển phần cứng ở mức thấp nhất 
 - Bạn chịu được việc code sai mà **không có thông báo lỗi nào** — chỉ là thiết bị nằm im
 - Bạn kiên nhẫn: một lỗi về thời điểm có thể mất ba ngày để tìm ra
 
-**Không hợp nếu** bạn cần thấy kết quả đẹp mắt ngay. Firmware là nghề mà thành công trông giống như "không có gì xảy ra cả".
+Bạn có thể thấy nền này ít hấp dẫn nếu cần kết quả đẹp mắt ngay. Nhiều thành công của firmware trông rất âm thầm: thiết bị chạy đúng thời điểm, không treo và xử lý lỗi an toàn.
 
 ---
 
@@ -26,7 +26,7 @@ Bạn viết phần mềm điều khiển phần cứng ở mức thấp nhất 
 
 Xong [Nền chung](00-ban-dang-o-dau.md#nền-chung--ai-cũng-phải-có), đặc biệt là **C**.
 
-Phần con trỏ và phép toán trên bit là bắt buộc, không né được. Nếu chưa vững, học C thêm hai tuần vẫn nhanh hơn là lao vào STM32 rồi mắc kẹt ở mọi thứ.
+Phần con trỏ và phép toán trên bit là bắt buộc. Nếu chưa vững, hãy củng cố C trước hoặc song song bằng bài nhỏ; như vậy bạn sẽ hiểu code mẫu và tự tìm lỗi được.
 
 ---
 
@@ -42,7 +42,7 @@ Phần con trỏ và phép toán trên bit là bắt buộc, không né được
 | **Interrupts** | Phản ứng với sự kiện. Và hiểu vì sao không được làm việc nặng bên trong hàm ngắt |
 | **Timers / Counters** | Làm đúng việc vào đúng thời điểm |
 
-Song song: cài được toolchain, build được, nạp được chương trình xuống board. Nghe đơn giản nhưng đây là chỗ nhiều người bỏ cuộc — cứ kiên trì, ai cũng vượt qua.
+Song song: cài toolchain, build và nạp được chương trình xuống board. Nếu mắc ở bước này, hãy lưu nguyên văn lỗi, phiên bản công cụ và tên board để hỏi; đây là lỗi thiết lập rất thường gặp, không phải dấu hiệu bạn không hợp firmware.
 
 **Kỹ năng ngầm quan trọng nhất của chặng này:** mở datasheet con chip, tìm đúng chương nói về ngoại vi bạn cần, đọc bảng thanh ghi. Đây là thứ phân biệt người làm firmware thật với người copy code mẫu.
 
@@ -69,6 +69,14 @@ Song song: cài được toolchain, build được, nạp được chương trì
 
 ---
 
+## Bài đầu tiên — 1 đến 2 buổi
+
+Trên board CLB đang có, làm LED trên board nhấp nháy và in một bộ đếm qua UART. Ghi lại đúng tên board, công cụ build, cách nạp code và một lỗi bạn đã gặp.
+
+Mục tiêu của bài này không phải học hết STM32. Bạn chỉ cần tự đi trọn vòng: sửa code → build → nạp → quan sát → sửa lỗi. Nếu chưa có board, hỏi mượn trước khi mua.
+
+---
+
 ## Tự chấm: bạn đã có nền chưa
 
 > **Đọc một cảm biến bằng driver do chính bạn viết.**
@@ -80,6 +88,8 @@ Song song: cài được toolchain, build được, nạp được chương trì
 Phần cuối là phần được chấm kỹ nhất. Nó chứng minh bạn tra tài liệu chứ không đoán.
 
 Làm được bài này nghĩa là bạn có nền. Chưa làm được thì chưa có, dù đã xem bao nhiêu video.
+
+Nếu chưa có board hoặc cảm biến, hỏi CLB thiết bị nào đang sẵn có trước khi mua để bài làm dùng đúng phần cứng và tài liệu của nhóm.
 
 ---
 
@@ -104,12 +114,4 @@ Chi tiết: [Ba mảng sản phẩm](ba-mang-san-pham.md)
 
 ## Học tới đâu thì thị trường nhận
 
-Vào [nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054), tìm các tin tuyển **Embedded Software Engineer** hoặc **Firmware Engineer**. Đọc phần mô tả yêu cầu, liệt kê ra, đối chiếu với bảng ở trên.
-
-Bạn sẽ thấy phần lớn yêu cầu trùng đúng với những gì trong file này. Đó là lý do file này được viết như vậy.
-
----
-
-## Mentor phụ trách
-
-`<cần điền>`
+Tìm 5–10 tin tuyển **Embedded Software Engineer** hoặc **Firmware Engineer** gần đây từ nhiều nguồn. Ghi lại các yêu cầu lặp lại, loại vi điều khiển, RTOS, công cụ debug và giao thức thường gặp rồi đối chiếu với bảng trên. [Nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054) là một nguồn tham khảo.

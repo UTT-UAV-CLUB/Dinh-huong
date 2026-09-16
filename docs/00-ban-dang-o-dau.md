@@ -8,7 +8,9 @@ File này dành cho bạn vừa vào CLB và đang định hỏi một câu ki�
 
 Không có gì sai khi muốn những thứ đó. Vấn đề nằm ở chỗ khác: **những thứ đó không phải điểm bắt đầu, chúng là điểm đến**. Và khoảng cách từ chỗ bạn đang đứng tới đó thường xa hơn bạn nghĩ — không phải vì nó khó một cách bí ẩn, mà vì nó được xếp chồng lên khoảng năm sáu lớp nền mà bạn chưa có.
 
-CLB chỉ có một vài người đủ sức kèm cặp các bạn. Nếu mỗi người mới đều cần được giải thích lại từ đầu, không ai còn thời gian làm việc thật. CLB chúng ta hướng đến tinh thần tự học và chia sẻ kinh nghiệm với nhau, chứ không phải là một khóa học dạy các bạn từ đầu đến cuối. File này viết ra để bạn tự đi được đoạn đường đầu tiên.
+CLB không phải một khóa học có giáo viên đi cùng từ đầu đến cuối; đây là nơi mọi người tự học, làm dự án và chia sẻ kinh nghiệm. Mentor có thời gian giới hạn, nên file này giúp bạn tự đi đoạn đầu và chuẩn bị đủ thông tin để được hỗ trợ đúng chỗ.
+
+Bạn không cần đọc thuộc hay hiểu hết ngay. Hãy tìm phần gần nhất với mục tiêu của mình, làm phần tự kiểm tra, rồi chọn một việc nhỏ để thử.
 
 ---
 
@@ -31,16 +33,16 @@ Câu hỏi ngược lại dành cho bạn: **nhận diện xong rồi thì sao?*
 
 Nếu câu trả lời là "hiện lên màn hình cho đẹp" thì đó không phải việc của CLB này. Ở đây, nhận diện xong phải dẫn tới một hành động: drone bay lệch sang trái, cái van đóng lại, cái còi kêu lên.
 
-Và cái khó không nằm ở model. Model là phần dễ nhất, có sẵn đầy. Cái khó là chạy nó **trên board nhúng gắn trên thiết bị**, đủ nhanh để phản ứng kịp, với lượng điện ít ỏi. Một model chính xác 99% mà chạy quá chậm để dùng thì bằng không.
+Model chỉ là một phần của hệ thống. Thách thức lớn ở CLB là chạy nó **trên board nhúng gắn trên thiết bị**, đủ nhanh để phản ứng kịp và đủ ổn định với nguồn điện, nhiệt độ, camera thực tế. Độ chính xác cao vẫn chưa đủ nếu hệ thống không đạt tốc độ hoặc độ trễ mà bài toán yêu cầu.
 
 **Việc của bạn bây giờ:** học Python cho chắc, học Linux dòng lệnh, rồi làm cho một cái camera trên board nhúng chạy được và **tự đo xem nó chạy nhanh bao nhiêu khung hình mỗi giây**.
 **Bắt đầu từ:** [Nền thị giác máy nhúng](nen-thi-giac-may.md).
 
 ### "Em muốn học STM32"
 
-Câu này hỏi được, nhưng nó giống như nói "em muốn học lái xe" mà chưa biết đi bộ. STM32 là con chip — bạn học nó để làm gì mới là câu hỏi thật.
+Câu này hoàn toàn hợp lý, nhưng STM32 là một họ vi điều khiển chứ chưa phải mục tiêu cuối. Biết mình muốn đọc cảm biến, điều khiển động cơ hay làm flight controller sẽ giúp chọn bài đầu tiên phù hợp.
 
-**Kiểm tra nhanh:** bạn viết được chương trình C dùng con trỏ và phép toán trên bit chưa? Nếu chưa, học STM32 lúc này bạn sẽ chỉ copy code mẫu và không hiểu vì sao nó chạy. Đến khi nó không chạy, bạn sẽ bế tắc hoàn toàn.
+**Kiểm tra nhanh:** bạn viết được chương trình C dùng con trỏ và phép toán trên bit chưa? Nếu chưa, hãy củng cố C trước hoặc học song song bằng bài rất nhỏ. Nếu chỉ chép code mẫu, bạn sẽ khó tự tìm lỗi khi phần cứng không phản hồi.
 
 **Bắt đầu từ:** phần C ở [Nền chung](#nền-chung--ai-cũng-phải-có), rồi sang [Nền firmware STM32](nen-stm32.md).
 
@@ -60,24 +62,24 @@ Câu này hỏi được, nhưng nó giống như nói "em muốn học lái xe"
 
 Đây là câu hỏi trung thực nhất trong tất cả, và dễ trả lời nhất.
 
-Làm hết [Nền chung](#nền-chung--ai-cũng-phải-có) ở dưới. Mất khoảng hai đến ba tuần. Trong lúc làm, bạn sẽ tự nhận ra mình thích phần nào — thích code thì đi firmware, thích cầm mỏ hàn thì đi hardware, thích nghịch dữ liệu và ảnh thì đi thị giác máy.
+Làm [Nền chung](#nền-chung--ai-cũng-phải-có) ở dưới đến mức hoàn thành được các bài tự chấm. Thời gian có thể từ vài tuần đến lâu hơn tùy nền tảng và quỹ thời gian. Trong lúc làm, bạn sẽ dần nhận ra mình thích code, phần cứng hay dữ liệu và hình ảnh.
 
 Không cần quyết định ngay hôm nay. Cần bắt đầu ngay hôm nay.
 
 ---
 
-## Tự kiểm tra: bạn đang ở mức nào
+## Tự kiểm tra: điểm bắt đầu của bạn
 
-Làm thử, đừng chỉ đọc. Mất khoảng một buổi.
+Hãy đánh dấu theo việc bạn **đã tự làm được**, không theo số video đã xem. Đây không phải bài thi và cũng không dùng để xếp hạng thành viên.
 
-**Mức 0 — chưa có nền**
+**Điểm A — bắt đầu từ nền chung**
 - [ ] Tôi chưa từng viết chương trình C nào tự mình nghĩ ra
 - [ ] Tôi chưa từng dùng dòng lệnh Linux
 - [ ] Tôi chưa từng dùng Git
 
-→ Bạn ở đây thì **mọi câu hỏi về STM32, AI, drone đều chưa có nghĩa**. Bắt đầu từ Nền chung. Đây không phải lời chê — gần như ai cũng bắt đầu từ mức này.
+→ Giữ mục tiêu STM32, AI hay drone làm hướng đi, nhưng bước tiếp theo nên là Nền chung. Gần như ai cũng từng bắt đầu ở đây.
 
-**Mức 1 — có nền cơ bản**
+**Điểm B — đã có nền cơ bản**
 - [ ] Tôi viết được chương trình C có dùng con trỏ và struct, tự nghĩ ra, không copy
 - [ ] Tôi dùng được `cd`, `ls`, `cat`, cài được phần mềm, đọc hiểu được thông báo lỗi
 - [ ] Tôi tạo được branch, commit và mở được Pull Request
@@ -85,7 +87,7 @@ Làm thử, đừng chỉ đọc. Mất khoảng một buổi.
 
 → Bạn chọn được nền rồi. Mở file nền tương ứng và làm theo.
 
-**Mức 2 — đi được một mình**
+**Điểm C — đã có thể nhận việc nhỏ trong dự án**
 - [ ] Tôi đọc được datasheet và tìm ra thông tin mình cần trong đó
 - [ ] Tôi tự sửa được lỗi build mà không cần hỏi ai
 - [ ] Tôi phân biệt được "code sai" và "phần cứng sai", và biết cách kiểm tra xem là cái nào
@@ -126,9 +128,7 @@ Máy chạy Windows thì cài WSL. Chưa cần cài song song hệ điều hành
 
 Cần làm được: hiểu commit và branch, và vì sao không ai commit thẳng vào `main` · `clone`/`add`/`commit`/`push`/`pull` · tạo branch và mở Pull Request · sửa theo góp ý của người review · xử lý conflict mà không xoá cả thư mục đi clone lại.
 
-Luật cụ thể của CLB nằm ở [CONTRIBUTING.md](../CONTRIBUTING.md).
-
-**Tự chấm:** mở một Pull Request vào chính repo này — sửa lỗi chính tả, làm rõ một câu khó hiểu, hoặc thêm thứ bạn thấy thiếu. PR được merge là bạn qua.
+**Tự chấm:** tạo một repo thử nghiệm, làm việc trên branch riêng và mở Pull Request. Khi đã biết quy trình của CLB, bạn có thể sửa lỗi chính tả hoặc làm rõ tài liệu trong repo này.
 
 ### 4. Python cơ bản
 
@@ -140,30 +140,35 @@ Cần làm được: đọc ghi file · vòng lặp và hàm · cài thư viện
 
 ## Hai kỹ năng không ai dạy nhưng quyết định bạn đi được bao xa
 
-### Không bịa số liệu
+### Dùng AI làm cộng sự
 
-Đây là nguyên tắc số một của CLB.
+AI bây giờ rất mạnh. **Hãy tận dụng để tự học và chuẩn bị câu hỏi tốt hơn.** Mentor không thể luôn đi cùng từng bước, còn AI có thể giải thích lại một khái niệm nhiều lần và giúp bạn tìm hướng thử tiếp theo.
 
-Khi bạn nói *"con chip này chạy ở 3.3V"* hay *"cảm biến này lấy mẫu 1000 lần mỗi giây"* — con số đó phải đến từ **datasheet - tài liệu chính thức từ nhà sản xuất**. Không phải từ trí nhớ. Không phải suy ra từ tên linh kiện. Không phải từ một video trên mạng.
+Dùng sao cho ra kỹ năng thật:
 
-Lý do: **một con số bịa trông y hệt một con số đúng.** Không phải ai làm cũng nhớ hết được thông số trong datasheet, và nó sẽ đi thẳng vào thiết kế. Đến khi board cháy hoặc drone rơi thì mới biết, và lúc đó tìm lại nguyên nhân rất tốn kém.
+- **Bắt nó giải thích, đừng chỉ lấy đáp án.** Hỏi "tại sao làm thế" nhiều hơn "code hộ tôi".
+- **Không dán code mình không hiểu vào dự án.** Đến lúc nó hỏng bạn sẽ không sửa được, và người review sẽ hỏi.
 
-Không tra được thì viết thẳng **"chưa kiểm chứng"**. Không ai đánh giá thấp bạn vì câu đó.
+> **Nhưng AI cũng bịa số liệu, và bịa rất tự tin.** Một con số điện áp hay tên thanh ghi nghe cực kỳ hợp lý vẫn có thể sai. Hỏi AI để **hiểu** tài liệu đang nói gì — đừng hỏi AI thay cho việc đọc tài liệu.
 
-**Luôn tra cách làm, tài liệu, datasheet, ... nếu không chắc chắn**
+AI là cộng sự, không phải người làm hộ.
 
-### Hỏi đúng cách
+### Hỏi cho nhanh được giúp
 
-Nói đủ bốn thứ:
+**Cứ hỏi. Đừng ngại.** Ngồi im ba tuần vì sợ hỏi câu ngu mới là điều đáng tiếc — ai trong CLB cũng từng tắc ở đúng những chỗ bạn đang tắc.
 
-1. Bạn đang cố làm gì
-2. Bạn đã thử những gì
-3. Kết quả thực tế ra sao — kèm thông báo lỗi **nguyên văn**, copy nguyên xi, không diễn đạt lại
-4. Bạn nghĩ nguyên nhân có thể là gì
+Phần dưới không phải điều kiện để được hỏi. Nó chỉ là mẹo giúp bạn nhận được câu trả lời nhanh hơn và đúng hơn.
 
-*"Em bị lỗi rồi anh ơi"* sẽ không nhận được câu trả lời nào hữu ích, vì không ai biết bắt đầu từ đâu.
+Nói được càng nhiều thứ sau càng tốt — có bao nhiêu nói bấy nhiêu, thiếu cũng không sao:
 
-Trước khi hỏi người, thử ba việc: đọc kỹ thông báo lỗi từ đầu đến cuối, tìm nguyên văn thông báo đó trên mạng, và kiểm tra xem tài liệu trong repo này đã trả lời chưa.
+- Bạn đang cố làm gì
+- Bạn đã thử gì rồi
+- Nó ra kết quả thế nào — nếu có thông báo lỗi thì **copy nguyên văn**, đừng kể lại bằng lời
+- Bạn đoán nguyên nhân là gì
+
+Khác biệt rất lớn: *"em bị lỗi rồi anh ơi"* thì người ta phải hỏi lại năm câu mới biết bắt đầu từ đâu, còn *"em nạp code xuống board thì nó báo dòng này, em thử cắm lại cổng khác vẫn thế"* thì nhiều khi được trả lời ngay trong một câu.
+
+Và nếu tiện, thử hỏi AI trước hoặc tìm nguyên văn thông báo lỗi trên mạng — nhiều lỗi gỡ được trong hai phút. Nhưng nếu bạn đang gấp hoặc thấy rối quá thì cứ hỏi luôn, không phải xin phép ai cả.
 
 ---
 
@@ -178,4 +183,10 @@ Chọn một nền:
 
 Chưa biết chọn gì thì đọc [Ba mảng sản phẩm](ba-mang-san-pham.md) để xem CLB đang làm ra cái gì, rồi chọn nền theo sản phẩm bạn thấy hấp dẫn.
 
-Và nếu bạn muốn biết **học tới đâu thì thị trường nhận**: vào [nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054), đọc mô tả công việc trong các tin tuyển dụng, đối chiếu với nền bạn đang học. Đó là thước đo thật, không phải ý kiến của ai cả.
+### Việc tiếp theo ngay hôm nay
+
+- Nếu ở **Điểm A**: chọn một bài nhỏ trong C, terminal hoặc Git và làm cho ra kết quả.
+- Nếu ở **Điểm B**: mở file của một nền và làm mục **Bài đầu tiên — 1 đến 2 buổi**; xem bài tự chấm như mục tiêu dài hơn.
+- Nếu ở **Điểm C**: hỏi người phụ trách mảng về một issue hoặc đầu việc nhỏ đang cần người.
+
+Nếu muốn biết **học tới đâu thì thị trường nhận**, hãy lấy 5–10 mô tả công việc gần đây từ nhiều nguồn, tìm các kỹ năng xuất hiện lặp lại rồi đối chiếu với nền đang học. [Nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054) là một nguồn tham khảo, không phải thước đo duy nhất.

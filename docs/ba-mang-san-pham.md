@@ -49,21 +49,23 @@ Drone bay được thật: tự giữ thăng bằng, bay theo lộ trình đặt
 | Nền | Việc cụ thể |
 |-----|-------------|
 | **Firmware STM32** | Driver cảm biến, vòng điều khiển ổn định, tích hợp ArduPilot/PX4, xử lý failsafe |
-| **Hardware** | Mạch nguồn, mạch điều khiển, chống nhiễu từ ESC, tích hợp cơ khí chịu rung, khung và thiết kế cơ khí của drone |
+| **Hardware** | Mạch nguồn, mạch điều khiển, chống nhiễu từ ESC và tích hợp điện–cơ chịu rung |
 | **Thị giác máy** | Bám mục tiêu, hạ cánh chính xác, bay theo thị giác khi tín hiệu vệ tinh yếu |
 | **ESP32 & Kết nối** | Truyền dữ liệu từ drone về trạm mặt đất |
 
 ### Đặc thù phải biết trước
 
-Đây là điều **nguy hiểm nhất và bị pháp luật quản lý chặt nhất**.
+Đây là mảng có rủi ro vật lý cao nhất trong ba mảng và hoạt động bay chịu quản lý pháp luật.
 
 - Cánh quạt quay ở tốc độ đủ để gây thương tích nặng
-- Pin LiPo cháy thì không dập được bằng nước
+- Pin LiPo hỏng có thể cháy, sinh khói độc và tái bùng phát
 - Bay không phép là vi phạm pháp luật, không phải "nghịch dại"
 
 **Bắt buộc đọc trước khi tham gia:** [An toàn & pháp lý](an-toan-va-phap-ly.md).
 
-Điểm quan trọng nhất trong đó: drone CLB tự lắp ráp **không thuộc diện được miễn cấp phép bay**, và thuộc diện cần giấy chứng nhận tình trạng kỹ thuật. Việc này do chủ nhiệm CLB và người phụ trách drone đó làm với nhà trường — **không phải việc các thành viên mới tự xử lý, và không ai được tự ý mang drone đi bay nếu không được cả 2 người trên đồng ý**.
+Quy tắc dành cho thành viên mới rất đơn giản: **không tự ý cấp nguồn động cơ có gắn cánh và không tự mang drone đi bay**. Người phụ trách phải kiểm tra các yêu cầu hiện hành về đăng ký, tình trạng kỹ thuật, người điều khiển và cấp phép bay cùng nhà trường trước mỗi hoạt động.
+
+Thiết kế khung và cơ khí là một chuyên môn riêng chưa có lộ trình đầy đủ trong repo này. Thành viên Hardware vẫn cần hiểu tích hợp cơ khí, nhưng không nên mặc định một người mới phải tự làm cả PCB lẫn toàn bộ khung bay.
 
 ---
 
@@ -97,7 +99,7 @@ Thiết bị đo một thứ gì đó ngoài đời thật rồi đưa số li�
 
 ### Vì sao nên bắt đầu ở đây nếu bạn chưa biết chọn gì
 
-Mảng này dễ nhất và cho kết quả nhanh nhất. Trong vài tuần bạn đã có một thiết bị chạy thật.
+Mảng này thường có vòng phản hồi ngắn: đọc cảm biến, gửi dữ liệu và nhìn thấy kết quả từ sớm. Vì vậy nó phù hợp để thử nếu bạn chưa biết mình thích firmware, mạng hay phần cứng hơn.
 
 Nó cũng an toàn hơn UAV nhiều — không có gì bay, không có cánh quạt. Và kỹ năng học được ở đây chuyển sang hai mảng kia rất dễ.
 
@@ -138,12 +140,12 @@ Nếu bạn vào mảng này, hãy chuẩn bị tinh thần rằng **phần lớ
 
 ## Chọn thế nào
 
-**Nếu bạn chưa biết gì và muốn thử:** bắt đầu ở **IoT**. Kết quả nhanh, an toàn, và kỹ năng chuyển sang mảng khác được.
+**Nếu bạn chưa biết gì và muốn thử:** bắt đầu bằng một bài **IoT** nhỏ. Kết quả dễ quan sát, rủi ro thấp hơn UAV, và nhiều kỹ năng chuyển sang mảng khác được.
 
 **Nếu bạn thích phần cứng, thích cầm mỏ hàn:** nền **Hardware**. Nó dùng được ở cả ba mảng, nên bạn không sợ chọn sai.
 
-**Nếu bạn muốn đi sâu và làm nghề lâu dài:** nền **Firmware STM32**. Khó nhất, lâu có kết quả nhất, nhưng thị trường tuyển nhiều nhất và trả cao nhất.
+**Nếu bạn thích làm việc sát phần cứng, thời gian thực và debug tới từng bit:** thử nền **Firmware STM32**. Đường vào thường dốc hơn và kết quả ít trực quan, nhưng kỹ năng dùng được trong nhiều ngành embedded.
 
 **Nếu bạn thích dữ liệu, thích ảnh:** nền **Thị giác máy** — nhưng đọc kỹ đoạn đầu của [file nền đó](nen-thi-giac-may.md) trước, vì nó không giống thứ phần lớn người mới tưởng tượng.
 
-Và nhớ: chọn sai vẫn đổi được. Nhưng phải thử thật rồi mới biết mình hợp với cái gì — ngồi cân nhắc ba tuần mà không làm gì thì không bao giờ biết.
+Và nhớ: lựa chọn đầu tiên chỉ là một phép thử. Hãy làm một bài nhỏ, ghi lại phần mình thích và phần làm mình mệt, rồi mới quyết định đi sâu hay đổi hướng.

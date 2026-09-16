@@ -6,22 +6,50 @@
 
 ## Đọc đoạn này trước, nó tiết kiệm thời gian cho cả hai bên
 
-Nền này bị hiểu nhầm nhiều nhất, nên nói rõ ngay.
+Nền này bị hiểu nhầm nhiều nhất. Phần lớn người mới nghe chữ "AI" rồi nghĩ tới một thứ, trong khi CLB đang làm một thứ khác hẳn. Nên phải nói thật rõ sự khác nhau đó ngay từ đầu.
 
-**KHÔNG phải:**
-- LLM, chatbot, AI tạo sinh
-- Train model trên dịch vụ đám mây rồi khoe chỉ số độ chính xác
-- Nghiên cứu kiến trúc mạng nơ-ron mới
+### Hai kiểu công việc thường bị gọi chung là "AI"
 
-**LÀ:**
-- Chạy model thị giác **trên board nhúng gắn ngay trên thiết bị**, với điện năng và sức tính toán hạn chế
-- Giữ đủ tốc độ khung hình để thiết bị phản ứng kịp
+| | **AI chạy trên máy chủ / đám mây** | **Thị giác máy nhúng — hướng ở CLB** |
+|---|---|---|
+| **Chạy ở đâu** | Trên máy chủ mạnh hoặc dịch vụ đám mây | Trên board nhỏ gắn ngay trên thiết bị, chạy bằng pin |
+| **Sức tính toán** | Có thể mở rộng nhưng phải trả chi phí và chấp nhận độ trễ mạng | Cố định, hạn chế; quá nhiệt còn có thể làm giảm tốc độ |
+| **Đầu vào** | Thường có thể xử lý tập trung trước khi suy luận | Hình từ camera thực tế có thể rung, ngược sáng, mờ hoặc lệch góc |
+| **Đầu ra** | Một câu trả lời, một con số, một đoạn văn | Một **hành động vật lý**: drone bay lệch trái, van đóng lại, còi kêu |
+| **Thế nào là thành công** | Chất lượng đầu ra, chi phí và độ trễ dịch vụ đạt yêu cầu | Đủ chính xác **và** đủ nhanh **và** đủ ổn định trong giới hạn điện, nhiệt và bộ nhớ |
+| **Khi có lỗi** | Thường dễ ghi log, cập nhật tập trung hoặc thử lại; mức hậu quả vẫn tùy ứng dụng | Có thể tác động ngay tới thiết bị vật lý nên cần trạng thái an toàn |
+| **Thời gian dồn vào đâu** | Dữ liệu, model và vận hành dịch vụ | Camera, tối ưu tốc độ, xử lý lỗi và ghép với phần cứng |
+
+Hai bên có nhiều kỹ năng chung về dữ liệu và học máy, nhưng tiêu chí hoàn thành khác nhau. Ở nền này, model phải trở thành một phần đáng tin cậy của thiết bị thật.
+
+### Cụ thể hơn
+
+**Nền này KHÔNG phải:**
+
+- **LLM, chatbot, AI tạo sinh.** Một số kỹ năng Python, triển khai và tối ưu có thể dùng chung, nhưng đây không phải trọng tâm của nền này.
+- **Chỉ train model rồi dừng ở một chỉ số.** Độ chính xác, tốc độ, độ trễ, bộ nhớ và mức tiêu thụ điện phải được đánh giá cùng nhau theo yêu cầu của sản phẩm.
+- **Nghiên cứu kiến trúc mạng nơ-ron mới ngay từ đầu.** Thành viên thường bắt đầu từ kiến trúc có sẵn, tinh chỉnh bằng dữ liệu của CLB rồi tập trung vào đánh giá và triển khai.
+
+**Nền này LÀ:**
+
+- Chạy model thị giác **trên board nhúng (VD: Pi 5, K230) gắn ngay trên thiết bị**, với điện năng và sức tính toán hạn chế
+- Giữ đủ tốc độ khung hình để thiết bị phản ứng kịp lúc
 - Lấy được hình ảnh dùng được từ camera gắn trên vật đang rung, đang di chuyển
 - Và quan trọng nhất: **biến kết quả nhận diện thành một hành động thật**
 
-Cái khó của nền này không nằm ở model. Model là phần dễ nhất, có sẵn đầy. Cái khó là làm cho nó chạy nổi trên phần cứng yếu, và làm cho thiết bị thật sự hành động theo nó.
+### Điều khiến nhiều người bất ngờ
 
-**Nếu model của bạn chính xác 99% nhưng chạy quá chậm để thiết bị dùng được, bạn chưa làm xong việc.**
+Cái khó của nền này **không chỉ nằm ở model**. Chọn, huấn luyện và đánh giá model vẫn cần làm nghiêm túc; phần triển khai lên thiết bị mới là nơi xuất hiện thêm nhiều ràng buộc.
+
+Có ba nhóm khó khăn nghiêng nhiều về kỹ thuật hệ thống nhúng:
+
+1. **Làm cho nó chạy nổi trên phần cứng yếu.** Thứ chạy mượt trên laptop có thể chậm hơn nhiều lần trên board nhúng.
+2. **Làm cho nó chạy ổn định lâu dài.** Chạy tốt 5 phút thì dễ. Chạy tốt 5 ngày liên tục ngoài trời là chuyện khác hẳn.
+3. **Làm cho thiết bị thật sự hành động theo nó.** Từ một khung màu trên ảnh tới một lệnh gửi xuống flight controller là cả một quãng đường.
+
+**Nói gọn: nếu model của bạn chính xác 99% nhưng chạy quá chậm để thiết bị dùng được, bạn chưa làm xong việc.**
+
+Nếu phần mô tả này khác điều bạn đang tìm, hãy quay lại [ba mảng sản phẩm](ba-mang-san-pham.md) và thử nền khác. Đổi hướng sau khi hiểu công việc rõ hơn là bình thường. Nếu đây đúng là bài toán bạn thích, hãy đọc tiếp.
 
 ---
 
@@ -39,7 +67,6 @@ Cái khó của nền này không nằm ở model. Model là phần dễ nhất,
 
 Xong [Nền chung](00-ban-dang-o-dau.md#nền-chung--ai-cũng-phải-có), đặc biệt là **Linux/SSH** và **Python**. Bạn sẽ sống trên dòng lệnh của board nhúng.
 
-Toán cần dùng: đại số tuyến tính cơ bản — ma trận, phép biến đổi toạ độ. Học dần trong lúc làm cũng được.
 
 ---
 
@@ -92,13 +119,21 @@ Phần tối ưu là **cốt lõi của nền này**. Đây là chỗ bạn tạ
 
 ---
 
+## Bài đầu tiên — 1 đến 2 buổi
+
+Trên laptop, mở camera bằng Python, hiển thị độ phân giải và đo tốc độ khung hình trong ít nhất một phút. Sau đó thay đổi độ phân giải và ghi lại tốc độ thay đổi thế nào.
+
+Chưa cần AI và chưa cần board nhúng. Mục tiêu là làm quen với camera, đo đạc và log; khi chuyển sang board, bạn đã có số liệu trên laptop để so sánh.
+
+---
+
 ## Tự chấm: bạn đã có nền chưa
 
 > **Bám một vật thể, trên board nhúng, đo được tốc độ thật.**
 >
 > Trên Raspberry Pi hoặc board CLB có, viết chương trình đọc camera thời gian thực, phát hiện một vật thể, in ra toạ độ tâm cùng **tốc độ khung hình đo được** ở mỗi khung.
 >
-> Nộp kèm: code, video màn hình chạy thật trên board, và một đoạn ghi rõ **tốc độ khung hình đo được là bao nhiêu, nút thắt cổ chai nằm ở đâu, và bạn biết điều đó bằng cách nào**.
+> Cần có: code, video màn hình chạy thật trên board, và một đoạn ghi rõ **tốc độ khung hình đo được là bao nhiêu, nút thắt cổ chai nằm ở đâu, và bạn biết điều đó bằng cách nào**.
 
 Phần cuối là phần quan trọng nhất. Nó phân biệt người chạy được code mẫu với người hiểu hệ thống mình đang chạy.
 
@@ -126,12 +161,8 @@ Chi tiết: [Ba mảng sản phẩm](ba-mang-san-pham.md)
 
 ## Học tới đâu thì thị trường nhận
 
-Nền này ít tin tuyển thẳng hơn hai nền kia, nên đọc theo cách khác: vào [nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054) tìm các tin có **Edge AI**, **Computer Vision** hoặc **Embedded Linux**.
+Tìm 5–10 tin có **Edge AI**, **Computer Vision**, **Robotics** hoặc **Embedded Linux** gần đây từ nhiều nguồn. Ghi lại các yêu cầu lặp lại về Linux, C/C++, Python, camera, tối ưu suy luận và đo hiệu năng. [Nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054) là một nguồn tham khảo.
 
-Điều bạn sẽ nhận ra: phần lớn yêu cầu là **kỹ năng nhúng**, không phải kỹ năng AI. Đó là lý do file này bắt bạn làm chủ board trước khi chạm vào model.
+Bạn thường sẽ thấy kỹ năng triển khai hệ thống xuất hiện song song với kỹ năng học máy. Đó là lý do file này yêu cầu làm chủ board và camera, không chỉ model.
 
 ---
-
-## Mentor phụ trách
-
-`<cần điền>`

@@ -8,7 +8,7 @@
 
 Bạn viết code trên vi điều khiển có sẵn Wi-Fi, đọc dữ liệu từ cảm biến, rồi đẩy nó lên mạng — tới server, tới điện thoại, tới nơi cần dùng. Và theo chiều ngược lại: nhận lệnh từ xa để điều khiển thiết bị.
 
-Đây là nghề **cho ra kết quả nhìn thấy được sớm nhất**. Bạn có thể có một thiết bị chạy thật trong vài tuần. Vì vậy nếu bạn chưa biết mình hợp với gì, đây là chỗ tốt để bắt đầu.
+Nền này có vòng phản hồi khá ngắn: bạn có thể đọc một cảm biến và xem dữ liệu trên điện thoại từ sớm. Vì vậy đây là một lựa chọn dễ thử nếu bạn chưa biết mình hợp với gì.
 
 ---
 
@@ -24,7 +24,7 @@ Bạn viết code trên vi điều khiển có sẵn Wi-Fi, đọc dữ liệu t
 
 Xong [Nền chung](00-ban-dang-o-dau.md#nền-chung--ai-cũng-phải-có).
 
-Nền này dễ vào hơn STM32 — bạn có thể bắt đầu khi C mới ở mức cơ bản, rồi học tiếp trong lúc làm.
+Bạn có thể bắt đầu khi C mới ở mức cơ bản, rồi học tiếp trong lúc làm. Tuy vậy, càng đi sâu vào lỗi thời gian thực, bộ nhớ và driver, nền C vẫn càng quan trọng.
 
 ---
 
@@ -38,7 +38,8 @@ Nền này dễ vào hơn STM32 — bạn có thể bắt đầu khi C mới ở
 | **UART** | In thông tin ra máy tính để debug |
 | **Interrupts** | Phản ứng với sự kiện bên ngoài |
 | **Timers / Counters** | Đọc cảm biến theo chu kỳ đều đặn |
-| **ADC / DAC** | Đọc cảm biến analog, đo điện áp pin |
+| **ADC** | Đọc cảm biến analog, đo điện áp pin |
+| **DAC** | Tạo tín hiệu analog nếu đúng biến thể ESP32 có ngoại vi này; luôn kiểm tra datasheet |
 
 ### Chặng 2 — Đọc cảm biến
 
@@ -66,9 +67,18 @@ Thiết bị đặt ngoài đồng, trên cột điện, trên xe đang chạy t
 |--------|--------------|
 | **GSM / LTE** | Mạng di động thông thường, băng thông khá, tốn điện |
 | **NB-IoT** | Thiết kế riêng cho thiết bị IoT: ít dữ liệu, rất tiết kiệm điện, phủ sóng sâu |
-| **LTE-M / 5G** | Khi cần nhiều dữ liệu hơn hoặc độ trễ thấp hơn |
+| **LTE-M (Cat-M1)** | IoT cần di động, băng thông và độ trễ cao hơn NB-IoT |
+| **4G / 5G qua module ngoài** | Khi ứng dụng thực sự cần băng thông cao; đổi lại tốn điện và phức tạp hơn |
 
 > **Cần tự kiểm chứng trước khi làm:** ESP32 có sẵn Wi-Fi, nhưng phần mạng di động thường phải dùng **module ngoài** nối vào chứ không tích hợp trong chip. Trước khi mua linh kiện hay thiết kế mạch, hãy mở datasheet của **đúng biến thể ESP32 CLB đang dùng** và xác nhận. Đừng tin trí nhớ của ai, kể cả của người viết file này.
+
+---
+
+## Bài đầu tiên — 1 đến 2 buổi
+
+Cho board kết nối Wi-Fi và in địa chỉ IP cùng trạng thái kết nối qua UART. Sau đó tắt điểm phát Wi-Fi, bật lại và quan sát chương trình phản ứng ra sao.
+
+Chưa cần cảm biến hay server. Mục tiêu là tự đi trọn vòng: sửa code → build → nạp → xem log → nhận ra mất kết nối. Hỏi CLB đang dùng biến thể ESP32 và framework nào trước khi cài công cụ hoặc mua board.
 
 ---
 
@@ -82,7 +92,7 @@ Thiết bị đặt ngoài đồng, trên cột điện, trên xe đang chạy t
 >
 > Nộp kèm: code, video demo có cảnh ngắt và nối lại mạng, và một đoạn ghi rõ bạn xử lý mất kết nối bằng cách nào.
 
-Phần rút mạng là phần phân biệt một bài tập với một thiết bị dùng được thật. Thiết bị chạy tốt trong phòng lab nhưng chết sau ba ngày ngoài thực tế thì không ai nhận.
+Phần ngắt và nối lại mạng giúp phân biệt một demo ngắn với thiết bị có thể vận hành lâu dài. Đây cũng là chỗ tốt để học retry, timeout, lưu tạm dữ liệu và quan sát trạng thái hệ thống.
 
 ---
 
@@ -106,10 +116,4 @@ Chi tiết: [Ba mảng sản phẩm](ba-mang-san-pham.md)
 
 ## Học tới đâu thì thị trường nhận
 
-Vào [nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054), tìm các tin có chữ **IoT** hoặc **Embedded**. Chú ý xem họ yêu cầu giao thức nào, nền tảng đám mây nào — đó là phần thị trường đang cần mà tài liệu này cố tình để trống, vì nó thay đổi nhanh.
-
----
-
-## Mentor phụ trách
-
-`<cần điền>`
+Tìm 5–10 tin có chữ **IoT**, **Embedded** hoặc **Firmware** gần đây từ nhiều nguồn. Chú ý các giao thức, nền tảng đám mây và yêu cầu về độ ổn định được nhắc lặp lại; các công nghệ này thay đổi nhanh nên cần kiểm tra lại theo thời điểm. [Nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054) là một nguồn tham khảo.
