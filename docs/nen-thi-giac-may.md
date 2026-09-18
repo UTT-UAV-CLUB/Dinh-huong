@@ -67,6 +67,17 @@ Nếu phần mô tả này khác điều bạn đang tìm, hãy quay lại [ba m
 
 Xong [Nền chung](00-ban-dang-o-dau.md#nền-chung--ai-cũng-phải-có), đặc biệt là **Linux/SSH** và **Python**. Bạn sẽ sống trên dòng lệnh của board nhúng.
 
+---
+
+## Chưa có board? Tập Linux trên WSL trước
+
+Máy bạn chạy Windows và chưa mượn được Pi hay K230? Cài **WSL (Windows Subsystem for Linux)** với Ubuntu — bạn có một môi trường Linux thật ngay trên máy mình, không cần cài song song hệ điều hành, không sợ mất dữ liệu.
+
+Làm được gì trên đó: quen dòng lệnh, quản lý gói và môi trường Python, cài thư viện xử lý ảnh, viết và chạy thử code trên ảnh hoặc video có sẵn. Gần hết Chặng 2 ở dưới học được theo cách này.
+
+Nhưng phải rõ giới hạn: **WSL không phải board nhúng.** Máy bạn mạnh hơn Pi nhiều lần, nên tốc độ khung hình đo trên đó **không nói lên điều gì** về tốc độ thật trên thiết bị. Camera, GPIO và bộ tăng tốc phần cứng cũng không có ở đây.
+
+Nói cách khác: WSL giúp bạn học **cách làm**. Chỉ board thật mới trả lời được câu hỏi trọng tâm của nền này — *nó có chạy đủ nhanh không*. Hỏi CLB mượn board sớm.
 
 ---
 

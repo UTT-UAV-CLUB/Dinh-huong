@@ -28,6 +28,16 @@ Bạn có thể bắt đầu khi C mới ở mức cơ bản, rồi học tiếp
 
 ---
 
+## Chưa có board? Bắt đầu trên trình mô phỏng
+
+Không có board trong tay không phải lý do để ngồi chờ. Bạn có thể học gần hết Chặng 1 đến Chặng 3 trên **[Wokwi](https://wokwi.com)** — trình mô phỏng chạy thẳng trong trình duyệt, miễn phí cho cá nhân, không cần cài gì.
+
+Điểm đáng dùng: Wokwi có ESP32, mô phỏng được **Wi-Fi và MQTT**, nên bạn dựng thử được gần đúng bài tự chấm ở dưới mà chưa cần mua linh kiện nào. Nối sai cũng không cháy gì, và chia sẻ bằng link để người khác xem code chạy.
+
+Nhưng đừng dừng ở đó. Trình mô phỏng không tái hiện được thứ sẽ làm bạn mất nhiều thời gian nhất ngoài đời thật: nguồn điện chập chờn, Wi-Fi yếu lúc được lúc mất, cảm biến trả về số rác, dây tiếp xúc kém. **Dùng nó để học nhanh và thử ý tưởng, rồi chuyển sang board thật sớm nhất có thể** — bài tự chấm phải làm trên phần cứng thật.
+
+---
+
 ## Phải học gì
 
 ### Chặng 1 — Làm chủ con chip
