@@ -51,33 +51,46 @@ Có ba nhóm khó khăn nghiêng nhiều về kỹ thuật hệ thống nhúng:
 
 Nếu phần mô tả này khác điều bạn đang tìm, hãy quay lại [ba mảng sản phẩm](ba-mang-san-pham.md) và thử nền khác. Đổi hướng sau khi hiểu công việc rõ hơn là bình thường. Nếu đây đúng là bài toán bạn thích, hãy đọc tiếp.
 
----
-
-## Hợp với bạn nếu
-
-- Bạn thích Python, và sẵn sàng học C++ khi cần tối ưu tốc độ
-- Bạn thích bài toán "làm sao cho nó chạy nổi trên phần cứng yếu" hơn là "làm sao cho chỉ số đẹp hơn"
-- Bạn chịu được việc thứ chạy mượt trên laptop lại chạy như rùa trên board nhúng
-
-**Không hợp nếu** bạn chỉ muốn làm AI thuần. Ở CLB này, model không gắn lên thiết bị được thì chưa tính là xong.
 
 ---
 
-## Điều kiện vào
+## Hợp với ai, cần gì trước
 
-Xong [Nền chung](00-ban-dang-o-dau.md#nền-chung--ai-cũng-phải-có), đặc biệt là **Linux/SSH** và **Python**. Bạn sẽ sống trên dòng lệnh của board nhúng.
+**Hợp nếu** bạn thích Python và sẵn sàng học C++ khi cần tối ưu tốc độ, thích bài toán "làm sao cho nó chạy nổi trên phần cứng yếu" hơn là "làm sao cho chỉ số đẹp hơn", và chịu được việc thứ chạy mượt trên laptop lại bò trên board nhúng.
+
+**Điều kiện vào:** xong [Nền chung](00-ban-dang-o-dau.md#nền-chung--ai-cũng-phải-có), đặc biệt **Linux/SSH** và **Python** — bạn sẽ sống trên dòng lệnh của board. Toán cần dùng: đại số tuyến tính cơ bản, ma trận và biến đổi toạ độ; học dần trong lúc làm cũng được.
 
 ---
 
 ## Chưa có board? Tập Linux trên WSL trước
 
-Máy bạn chạy Windows và chưa mượn được Pi hay K230? Cài **WSL (Windows Subsystem for Linux)** với Ubuntu — bạn có một môi trường Linux thật ngay trên máy mình, không cần cài song song hệ điều hành, không sợ mất dữ liệu.
+Máy Windows, chưa mượn được Pi hay K230? Cài **WSL** với Ubuntu — có môi trường Linux thật ngay trên máy mình, không cần cài song song hệ điều hành.
 
-Làm được gì trên đó: quen dòng lệnh, quản lý gói và môi trường Python, cài thư viện xử lý ảnh, viết và chạy thử code trên ảnh hoặc video có sẵn. Gần hết Chặng 2 ở dưới học được theo cách này.
+Làm được: quen dòng lệnh, quản lý môi trường Python, cài thư viện xử lý ảnh, chạy thử code trên ảnh và video có sẵn. Gần hết Chặng 2 học được theo cách này.
 
-Nhưng phải rõ giới hạn: **WSL không phải board nhúng.** Máy bạn mạnh hơn Pi nhiều lần, nên tốc độ khung hình đo trên đó **không nói lên điều gì** về tốc độ thật trên thiết bị. Camera, GPIO và bộ tăng tốc phần cứng cũng không có ở đây.
+Nhưng **WSL không phải board nhúng.** Máy bạn mạnh hơn Pi nhiều lần, nên tốc độ khung hình đo trên đó **không nói lên điều gì** về tốc độ thật trên thiết bị. Camera, GPIO và bộ tăng tốc phần cứng cũng không có ở đây.
 
-Nói cách khác: WSL giúp bạn học **cách làm**. Chỉ board thật mới trả lời được câu hỏi trọng tâm của nền này — *nó có chạy đủ nhanh không*. Hỏi CLB mượn board sớm.
+WSL dạy bạn **cách làm**. Chỉ board thật trả lời được câu hỏi trọng tâm của nền này — *nó có chạy đủ nhanh không*. Hỏi CLB mượn board sớm.
+
+---
+
+## Không biết học ở đâu? AI là cộng sự của bạn
+
+Nhìn bốn chặng ở dưới thấy nản là chuyện bình thường. **Không ai học hết một lúc, và bạn không cần đợi ai rảnh để được chỉ.**
+
+Cách dùng: lấy **một dòng** trong bảng, đưa cho AI, rồi hỏi. Ví dụ:
+
+> *"Giải thích không gian màu HSV cho người mới, vì sao tách vật theo màu thì dùng nó chứ không dùng RGB?"*
+>
+> *"Tôi muốn đo FPS trong vòng lặp đọc camera bằng Python. Viết ví dụ nhỏ nhất và giải thích từng dòng."*
+>
+> *"Chương trình của tôi chạy 5 FPS trên Pi. Gợi ý những chỗ có thể đang làm chậm và cách kiểm tra từng chỗ."*
+
+Riêng nền này có một lưu ý: AI quen với code chạy trên máy mạnh, nên giải pháp nó đưa ra có thể quá nặng cho board nhúng. Cách kiểm tra luôn giống nhau và chỉ bạn làm được — **đo FPS trên board thật**.
+
+Hãy bắt AI **giải thích và chia nhỏ**, đừng chỉ xin code — xem [nguyên tắc chung](00-ban-dang-o-dau.md#dùng-ai-làm-cộng-sự).
+
+Mentor dành thời gian cho những chỗ bạn đã thử mà vẫn tắc. Còn phần "cái này là gì, học thế nào" thì AI làm được ngay bây giờ.
 
 ---
 
@@ -85,56 +98,56 @@ Nói cách khác: WSL giúp bạn học **cách làm**. Chỉ board thật mới
 
 ### Chặng 1 — Làm chủ board nhúng
 
-Trước khi nói tới AI, bạn phải điều khiển được cái máy sẽ chạy nó.
+Trước khi nói tới AI, phải điều khiển được cái máy sẽ chạy nó.
 
-- Cài đặt và làm chủ một board nhúng (Raspberry Pi — CLB đã có repo hướng dẫn set up Pi 5)
+- Cài đặt và làm chủ một board nhúng (CLB đã có repo hướng dẫn set up Pi 5)
 - SSH vào board, làm việc hoàn toàn qua dòng lệnh, không cắm màn hình
-- Quản lý môi trường Python, cài thư viện, xử lý khi phiên bản xung đột
-- Hiểu tài nguyên board: bao nhiêu bộ nhớ, nóng tới đâu thì chậm lại, nguồn điện có đủ không
+- Quản lý môi trường Python, xử lý khi phiên bản thư viện xung đột
+- Hiểu tài nguyên board: bao nhiêu bộ nhớ, nóng tới đâu thì chậm lại, nguồn có đủ không
 
 ### Chặng 2 — Xử lý ảnh, chưa cần AI
 
 Rất nhiều bài toán thật giải được ở chặng này mà không cần model nào. Đừng bỏ qua.
 
-| Chủ đề | Bạn cần làm được gì |
-|--------|---------------------|
+| Chủ đề | Làm được gì |
+|--------|-------------|
 | Lấy khung hình từ camera | Ổn định, liên tục, không rớt hình |
-| Không gian màu và lọc ngưỡng | Tách vật thể theo màu |
-| Tìm đường viền, tìm hình dạng | Xác định vị trí vật thể |
-| Phát hiện marker | Cách đơn giản và rất đáng tin để định vị |
+| Không gian màu, lọc ngưỡng | Tách vật thể theo màu |
+| Tìm đường viền, hình dạng | Xác định vị trí vật thể |
+| Phát hiện marker | Cách đơn giản và đáng tin để định vị |
 | **Đo tốc độ khung hình thật** | Và biết chỗ nào đang làm chậm |
 
-**Bài tập nhỏ rất có ích:** phát hiện một vật màu rõ ràng, in ra toạ độ tâm theo thời gian thực. Nghe đơn giản, nhưng làm cho nó chạy ổn định ở tốc độ cao thì không đơn giản chút nào.
+**Bài tập nhỏ rất có ích:** phát hiện một vật màu rõ, in toạ độ tâm theo thời gian thực. Nghe đơn giản, nhưng chạy ổn định ở tốc độ cao thì không.
 
 ### Chặng 3 — Model học sâu trên board nhúng
 
-| Chủ đề | Bạn cần làm được gì |
-|--------|---------------------|
+| Chủ đề | Làm được gì |
+|--------|-------------|
 | Huấn luyện hoặc tinh chỉnh model phát hiện vật thể | Trên dữ liệu của CLB, không phải dữ liệu mẫu |
-| **Tối ưu cho nhúng** | Lượng tử hoá model, chuyển sang định dạng chạy nhanh trên phần cứng đích |
-| Dùng bộ tăng tốc phần cứng | Nếu CLB có |
-| **Đo và so sánh** | Model gốc so với model đã tối ưu: nhanh hơn bao nhiêu, mất bao nhiêu độ chính xác |
+| **Tối ưu cho nhúng** | Lượng tử hoá, chuyển sang định dạng chạy nhanh trên phần cứng đích |
+| Bộ tăng tốc phần cứng | Nếu CLB có |
+| **Đo và so sánh** | Model gốc và model đã tối ưu: nhanh hơn bao nhiêu, mất bao nhiêu độ chính xác |
 
-Phần tối ưu là **cốt lõi của nền này**. Đây là chỗ bạn tạo ra giá trị mà người chỉ biết train model không tạo ra được.
+Phần tối ưu là **cốt lõi của nền này** — chỗ bạn tạo ra giá trị mà người chỉ biết train model không tạo ra được.
 
 ### Chặng 4 — Biến kết quả thành hành động
 
-Đây là chặng nối nền của bạn với phần còn lại của CLB. Không có chặng này thì bạn chỉ đang làm xử lý ảnh, không phải làm thiết bị.
+Chặng nối nền của bạn với phần còn lại của CLB. Thiếu nó thì bạn chỉ đang làm xử lý ảnh.
 
-- Chuyển từ toạ độ pixel trên ảnh sang hướng trong không gian thật
+- Chuyển toạ độ pixel trên ảnh sang hướng trong không gian thật
 - Giao tiếp xuống vi điều khiển hoặc flight controller để gửi lệnh
-- Bám mục tiêu ổn định qua các khung hình, xử lý khi mục tiêu bị che khuất tạm thời
-- **Xử lý khi hỏng:** model nhận nhầm thì sao, camera mất tín hiệu thì sao, xử lý chậm quá thì sao
+- Bám mục tiêu ổn định qua các khung hình, xử lý khi mục tiêu bị che khuất
+- **Xử lý khi hỏng:** model nhận nhầm, camera mất tín hiệu, xử lý chậm quá thì sao
 
-> **Quy tắc tuyệt đối:** mọi hành vi tự động phải chạy đúng trong mô phỏng trước khi đụng tới thiết bị thật. Không ai được thử code tự động lần đầu trên drone thật. Hệ thống phải luôn có đường lui về chế độ an toàn — không bao giờ được bay mù.
+> **Quy tắc tuyệt đối:** mọi hành vi tự động phải chạy đúng trong mô phỏng trước khi đụng tới thiết bị thật. Không ai thử code tự động lần đầu trên drone thật. Hệ thống phải luôn có đường lui về chế độ an toàn.
 
 ---
 
 ## Bài đầu tiên — 1 đến 2 buổi
 
-Trên laptop, mở camera bằng Python, hiển thị độ phân giải và đo tốc độ khung hình trong ít nhất một phút. Sau đó thay đổi độ phân giải và ghi lại tốc độ thay đổi thế nào.
+Trên board CLB có: đọc camera và hiển thị khung hình, in ra tốc độ khung hình đo được. Ghi lại tên board, camera, và một lỗi bạn đã gặp.
 
-Chưa cần AI và chưa cần board nhúng. Mục tiêu là làm quen với camera, đo đạc và log; khi chuyển sang board, bạn đã có số liệu trên laptop để so sánh.
+Chưa cần model nào. Mục tiêu là đi trọn vòng: SSH vào board → chạy code → thấy hình → đo được tốc độ.
 
 ---
 
@@ -142,38 +155,24 @@ Chưa cần AI và chưa cần board nhúng. Mục tiêu là làm quen với cam
 
 > **Bám một vật thể, trên board nhúng, đo được tốc độ thật.**
 >
-> Trên Raspberry Pi hoặc board CLB có, viết chương trình đọc camera thời gian thực, phát hiện một vật thể, in ra toạ độ tâm cùng **tốc độ khung hình đo được** ở mỗi khung.
+> Viết chương trình đọc camera thời gian thực, phát hiện một vật thể, in toạ độ tâm cùng **tốc độ khung hình đo được** ở mỗi khung.
 >
-> Cần có: code, video màn hình chạy thật trên board, và một đoạn ghi rõ **tốc độ khung hình đo được là bao nhiêu, nút thắt cổ chai nằm ở đâu, và bạn biết điều đó bằng cách nào**.
+> Nộp kèm: code, video màn hình chạy thật trên board, và đoạn ghi rõ **tốc độ đo được là bao nhiêu, nút thắt cổ chai ở đâu, và bạn biết điều đó bằng cách nào**.
 
-Phần cuối là phần quan trọng nhất. Nó phân biệt người chạy được code mẫu với người hiểu hệ thống mình đang chạy.
+Phần cuối quan trọng nhất — nó phân biệt người chạy được code mẫu với người hiểu hệ thống mình đang chạy.
 
-Chú ý: bài này **không yêu cầu dùng AI**. Làm bằng xử lý ảnh thông thường là đạt. Nếu bạn thấy bất ngờ vì điều đó, hãy đọc lại đoạn đầu file.
-
----
-
-## Nền này dùng ở mảng nào
-
-- **AIoT** — camera tự nhận diện tại chỗ, không cần gửi ảnh lên server
-- **UAV** — bám mục tiêu, hạ cánh chính xác, bay dựa trên thị giác khi tín hiệu vệ tinh yếu
-
-Chi tiết: [Ba mảng sản phẩm](ba-mang-san-pham.md)
+Chú ý: bài này **không yêu cầu dùng AI**. Làm bằng xử lý ảnh thông thường là đạt. Thấy bất ngờ vì điều đó thì đọc lại đoạn đầu file.
 
 ---
 
 ## Tài nguyên
 
-- **Tài liệu chính thức của thư viện thị giác và framework suy luận bạn dùng** — đọc đúng bản của phiên bản bạn cài
-- [MAVLink Developer Guide](https://mavlink.io/en/) — nếu bạn đi vào mảng UAV. Đây là thứ nối nền của bạn với con drone. Không học phần này thì bạn chỉ đang làm xử lý ảnh
-- [PX4 Autopilot Documentation](https://docs.px4.io/main/en/) — mục *Development*, đọc về cách máy tính phụ ghép vào hệ thống bay
+- **Tài liệu thư viện thị giác và framework suy luận bạn dùng** — đọc đúng bản của phiên bản bạn cài
+- [MAVLink Developer Guide](https://mavlink.io/en/) — nếu đi vào mảng UAV. Đây là thứ nối nền của bạn với con drone
 - Repo `a.i-set-up-pi5` của CLB — hướng dẫn set up Pi 5
 
----
+**Dùng ở mảng:** AIoT (camera tự nhận diện tại chỗ), UAV (bám mục tiêu, hạ cánh chính xác) — xem [Ba mảng sản phẩm](ba-mang-san-pham.md).
 
-## Học tới đâu thì thị trường nhận
+**Thị trường tuyển gì:** tìm tin có *Edge AI*, *Computer Vision*, *Embedded Linux*. Bạn sẽ nhận ra phần lớn yêu cầu là **kỹ năng nhúng**, không phải kỹ năng AI — đó là lý do file này bắt làm chủ board trước khi chạm vào model. Cách làm ở [README](../README.md#học-tới-đâu-thì-thị-trường-nhận).
 
-Tìm 5–10 tin có **Edge AI**, **Computer Vision**, **Robotics** hoặc **Embedded Linux** gần đây từ nhiều nguồn. Ghi lại các yêu cầu lặp lại về Linux, C/C++, Python, camera, tối ưu suy luận và đo hiệu năng. [Nhóm tuyển dụng lập trình nhúng](https://web.facebook.com/groups/775890384111054) là một nguồn tham khảo.
-
-Bạn thường sẽ thấy kỹ năng triển khai hệ thống xuất hiện song song với kỹ năng học máy. Đó là lý do file này yêu cầu làm chủ board và camera, không chỉ model.
-
----
+**Mentor phụ trách:** `<cần điền>`

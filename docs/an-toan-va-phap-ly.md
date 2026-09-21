@@ -50,11 +50,11 @@ Theo luật, tổ chức và cá nhân khai thác, sử dụng tàu bay không n
 
 **Được miễn cấp phép bay** khi đồng thời thỏa mãn: hoạt động ngoài khu vực cấm bay và khu vực hạn chế bay, phạm vi hoạt động **trong tầm nhìn trực quan bằng mắt thường**, trọng lượng cất cánh tối đa **nhỏ hơn 0,25 kg**, và nhằm mục đích vui chơi giải trí.
 
-> **Điều này có nghĩa gì với CLB chúng ta:** gần như mọi con drone CLB tự chế đều **nặng hơn 0,25 kg** và **không nhằm mục đích giải trí**. Tức là **không thuộc diện miễn phép**. Mọi chuyến bay đều phải xin phép đúng quy trình.
+**Nghị định 288/2025/NĐ-CP** có hiệu lực từ **05/11/2025**, quy định chi tiết việc quản lý tàu bay không người lái và phương tiện bay khác. Thủ tục áp dụng phụ thuộc loại phương tiện, mục đích, khu vực và hoạt động cụ thể, nên người phụ trách phải đọc trực tiếp văn bản hiện hành thay vì suy ra từ bản tóm tắt này.
 
-**Nghị định 288/2025/NĐ-CP** có hiệu lực từ **05/11/2025** và quy định chi tiết việc quản lý tàu bay không người lái, phương tiện bay khác. Thủ tục áp dụng phụ thuộc loại phương tiện, mục đích, khu vực và hoạt động cụ thể, nên người phụ trách phải kiểm tra trực tiếp văn bản hiện hành thay vì suy ra từ bản tóm tắt này.
-
-> **Điều này có nghĩa gì với CLB:** drone nghiên cứu của CLB thường không đồng thời đáp ứng điều kiện dưới 0,25 kg, dùng để vui chơi giải trí và các điều kiện còn lại để được miễn phép. Thành viên mới không tự làm thủ tục và cũng không tự kết luận một chuyến bay được miễn. Chủ nhiệm hoặc người được giao phụ trách phải làm việc với nhà trường và cơ quan có thẩm quyền.
+> **Nghĩa là gì với CLB:** drone nghiên cứu của CLB gần như không bao giờ đồng thời đáp ứng đủ các điều kiện miễn phép — đặc biệt là dưới 0,25 kg và dùng để vui chơi giải trí. Nên mặc định là **phải xin phép**.
+>
+> Thành viên mới **không tự làm thủ tục** và **không tự kết luận** một chuyến bay được miễn. Chủ nhiệm hoặc người được giao phụ trách làm việc với nhà trường và cơ quan có thẩm quyền.
 
 **Cách tra đúng:** tìm số hiệu văn bản trên Cổng Văn bản Chính phủ hoặc cổng chính thức của cơ quan ban hành, đọc văn bản gốc và kiểm tra hiệu lực. Không lấy mức phạt, thời hạn hay thủ tục từ bài quảng cáo/dịch vụ làm căn cứ duy nhất.
 
